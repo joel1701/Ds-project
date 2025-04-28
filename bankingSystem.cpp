@@ -40,7 +40,36 @@ class BankAcc{
 
             }
 
-            void 
+            void depositMoney(float ammount){
+                balance=balance+ammount;
+                node* newNode=new node(ammount, "deposit");
+                if(head==NULL){
+                    head=newNode;
+                }
+                else{
+                    newNode->next=head;
+                    head=newNode;
+                }
+
+                cout<<"you have deposited"<<ammount<<"rupees\n";
+            }
+            
+            void withdrawMoney(float ammount){
+                if(balance<ammount){
+                    cout<<"not enough balance"<<"\n";
+                    return;
+                }
+                node* newNode=new node(ammount, "withdraw");
+                if(head==NULL){
+                    head=newNode;
+                }
+                else{
+                    newNode->next=head;
+                    head=newNode;
+                }
+                cout<<"you have withdrawn"<<ammount<<"rupees\n";
+            }
+            
 
 };
 int main(){
