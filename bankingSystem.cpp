@@ -6,6 +6,7 @@ using namespace std;
 
 class node{ //node class is used for storing transation history
     public:
+    cout<<"hi im krishna";
             float ammount;
             string type;
             node* next;
