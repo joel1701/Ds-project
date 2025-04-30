@@ -59,6 +59,7 @@ class BankAcc{
                     cout<<"not enough balance"<<"\n";
                     return;
                 }
+                balance=balance-ammount;
                 node* newNode=new node(ammount, "withdraw");
                 if(head==NULL){
                     head=newNode;
@@ -78,6 +79,11 @@ class BankAcc{
                     cout<<temp->type<<temp->ammount<<"rupees\n";
                     temp=temp->next;
                 }
+            }
+            void displayAccountDetails(){
+                cout<<"\nAccount Number :"<<accountNo<<"\n";
+                cout<<"Name :"<<name<<"\n";
+                cout<<"Balance :"<<balance<<"\n";
             }
 
 
