@@ -69,7 +69,17 @@ class BankAcc{
                 }
                 cout<<"you have withdrawn"<<ammount<<"rupees\n";
             }
-            
+            void transactionHistory(){
+                node* temp=head;
+                if(temp==NULL){
+                    cout<<"you have made no transations"<<"\n"; // list is empty
+                }
+                while(temp!=NULL){
+                    cout<<temp->type<<temp->ammount<<"rupees\n";
+                    temp=temp->next;
+                }
+            }
+
 
 };
 int main(){
