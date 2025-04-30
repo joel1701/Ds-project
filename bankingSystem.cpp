@@ -17,14 +17,14 @@ class node{ //node class is used for storing transation history
             }
 };
 
-class BankAcc{
+class BankAccount{
     private:
             int accountNo; //account number of user
             string name; // name of the user
             float balance;
             node* head; //head of the linked list that we used to store transaction history
     public:
-            BankAcc(){ //constructor for the class BankAcc
+            BankAccount(){ //constructor for the class BankAcc
                 balance=0; 
                 head=NULL;
 
@@ -85,10 +85,88 @@ class BankAcc{
                 cout<<"Name :"<<name<<"\n";
                 cout<<"Balance :"<<balance<<"\n";
             }
+            void deleteAccount(){
 
+                
+            }
+            void getAccNo{
+                return accountNo;
+            }
 
 };
 int main(){
-  
+    BankAccount acc;
+
+    int option;
+    
+    while(option !=8){
+        cout<<"MENU"<<"\n"<<"Choose the operation you want to perform\n";
+        cout<<"1. Create a new account\n";
+        cout<<"2. Deposit money\n";
+        cout<<"3. Withdraw money\n";
+        cout<<"4. Display account details\n";
+        cout<<"5. Show transation history\n";
+        cout<<"6. Delete account\n";
+        cout<<"7 . EXIT\n";
+        
+        cin>>option;
+
+        int accNo;
+        int amount;
+
+        switch(option){
+            case 1:
+                acc.MakeAnAccount();
+                break;
+        }
+            case 2:
+                cout<<"Enter Account number:";
+                cin>>accNo;
+                if(accNo==acc.getAccNo()){
+                    cout<<"Enter Amount to deposit: ";
+                    cin>>amount;
+                    acc.depositMoney(amount);
+                }
+                else{
+                    cout<<"invalid account number \n";
+                }
+                break;
+            case 3:
+                cout<<"Enter Account Number:";
+                cin>>accNo;
+                if(accNo==acc.getAccNo()){
+                    cout<<"Enter Amount to withdraw:";
+                    cin>>amount;
+                    acc.withdrawMoney(amount);
+                }
+                else{
+                    cout<<"invalid account number";
+                }
+                break;
+            case 4:
+                cout<<"Enter Account Number:";
+                cin>>accNo;
+                if(accNo==acc.getAccNo()){
+                    acc.displayAccountDetails();
+                }
+                else{
+                    cout<<"invalid account number";
+                }
+                break;
+            case 5:
+                cout<<"Enter Account Number:";
+                cin>>accNo;
+                if(accNo==acc.getAccNo()){
+                    acc.transactionHistory();
+                }
+                else{
+                    cout<<"invalid account number";
+                }
+                break;
+
+            
+                
+    }
+
     
 }
