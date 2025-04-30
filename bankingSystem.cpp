@@ -200,11 +200,6 @@ int main(){
             case 8: 
             cout<<"invalid choice";
             }     
-
-cout<<"hi";
-cout<<"hello"
-            
-                
     }
 
    return 0; 
