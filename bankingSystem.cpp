@@ -39,6 +39,12 @@ class BankAccount{
                 cin>>balance;
 
             }
+            void addPersonalDetails(){
+                cout<<"Enter your DOB\n";
+                cin>>
+
+                
+            }
 
             void depositMoney(float ammount){
                 balance=balance+ammount;
@@ -71,6 +77,7 @@ class BankAccount{
                 cout<<"you have withdrawn"<<ammount<<"rupees\n";
             }
             void transactionHistory(){
+                cout<<"Your transation history is : \n";
                 node* temp=head;
                 if(temp==NULL){
                     cout<<"you have made no transations"<<"\n"; // list is empty
@@ -81,16 +88,28 @@ class BankAccount{
                 }
             }
             void displayAccountDetails(){
+                cout<<"Your account details are \n";
                 cout<<"\nAccount Number :"<<accountNo<<"\n";
                 cout<<"Name :"<<name<<"\n";
                 cout<<"Balance :"<<balance<<"\n";
             }
-            void deleteAccount(){
-
-                
-            }
-            void getAccNo{
+           
+            int getAccNo(){
                 return accountNo;
+            }
+            void deleteAccount(){
+                accountNo=NULL;
+                name="";
+                balance=NULL;
+
+                while(head!=NULL){ //deleting transaction history
+                    node* temp=head;
+                    head=head->next;
+                    delete temp;
+                }
+                cout<<"Account has been deleted";
+                
+
             }
 
 };
@@ -117,8 +136,9 @@ int main(){
         switch(option){
             case 1:
                 acc.MakeAnAccount();
+                acc.addPersonalDetails();
                 break;
-        }
+        
             case 2:
                 cout<<"Enter Account number:";
                 cin>>accNo;
@@ -163,10 +183,28 @@ int main(){
                     cout<<"invalid account number";
                 }
                 break;
+            case 6:
+                cout<<"Enter Account Number:";
+                cin>>accNo;
+                if(accNo==acc.getAccNo()){
+                    acc.deleteAccount();
+                }
+                else{
+                    cout<<"invalid account details";
+                }
+                break;
+            case 7:
+                cout<<"EXITING BANKING SYSTEM\n";
+                cout<<"Thank you!";
+
+            case 8: 
+            cout<<"invalid choice";
+            }     
+
 
             
                 
     }
 
-    
+   return 0; 
 }
