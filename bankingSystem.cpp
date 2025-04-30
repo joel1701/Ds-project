@@ -144,7 +144,6 @@ int main(){
                 }
                 break;
             case 4:
-            
                 cout<<"Enter Account Number:";
                 cin>>accNo;
                 if(accNo==acc.getAccNo()){
