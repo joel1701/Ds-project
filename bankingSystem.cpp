@@ -6,12 +6,12 @@ using namespace std;
 
 class node{ //node class is used for storing transation history
     public:
-            float ammount;
+            float amount;
             string type;
             node* next;
 
-            node(float ammount, string type){
-                this->ammount=ammount; 
+            node(float amount, string type){
+                this->amount=amount; 
                 this->type=type;
                 next=NULL;
             }
@@ -34,21 +34,17 @@ class BankAccount{
                 cout<<"Enter Account Number"<<"\n";
                 cin>>accountNo;
                 cout<<"Enter Your Name"<<"\n";
-                cin>>name;
-                cout<<"Enter the ammount of money you want to deposit initially"<<"\n";
+                cin.ignore();
+                getline(cin, name); //used for full name 
+                cout<<"Enter the amount of money you want to deposit initially"<<"\n";
                 cin>>balance;
 
             }
-            void addPersonalDetails(){
-                cout<<"Enter your DOB\n";
-                cin>>
+          
 
-                
-            }
-
-            void depositMoney(float ammount){
-                balance=balance+ammount;
-                node* newNode=new node(ammount, "deposit");
+            void depositMoney(float amount){
+                balance=balance+amount;
+                node* newNode=new node(amount, "deposit");
                 if(head==NULL){
                     head=newNode;
                 }
@@ -57,16 +53,16 @@ class BankAccount{
                     head=newNode;
                 }
 
-                cout<<"you have deposited"<<ammount<<"rupees\n";
+                cout<<"you have deposited"<<amount<<"rupees\n";
             }
             
-            void withdrawMoney(float ammount){
-                if(balance<ammount){
+            void withdrawMoney(float amount){
+                if(balance<amount){
                     cout<<"not enough balance"<<"\n";
                     return;
                 }
-                balance=balance-ammount;
-                node* newNode=new node(ammount, "withdraw");
+                balance=balance-amount;
+                node* newNode=new node(amount, "withdraw");
                 if(head==NULL){
                     head=newNode;
                 }
@@ -74,7 +70,7 @@ class BankAccount{
                     newNode->next=head;
                     head=newNode;
                 }
-                cout<<"you have withdrawn"<<ammount<<"rupees\n";
+                cout<<"you have withdrawn"<<amount<<"rupees\n";
             }
             void transactionHistory(){
                 cout<<"Your transation history is : \n";
@@ -83,7 +79,7 @@ class BankAccount{
                     cout<<"you have made no transations"<<"\n"; // list is empty
                 }
                 while(temp!=NULL){
-                    cout<<temp->type<<temp->ammount<<"rupees\n";
+                    cout<<temp->type<<temp->amount<<"rupees\n";
                     temp=temp->next;
                 }
             }
@@ -98,9 +94,9 @@ class BankAccount{
                 return accountNo;
             }
             void deleteAccount(){
-                accountNo=NULL;
+                accountNo=-1;
                 name="";
-                balance=NULL;
+                balance=0;
 
                 while(head!=NULL){ //deleting transaction history
                     node* temp=head;
@@ -118,7 +114,7 @@ int main(){
 
     int option=0;
     
-    while(option !=8){
+    while(option !=7){
         cout<<"MENU"<<"\n"<<"Choose the operation you want to perform\n";
         cout<<"1. Create a new account\n";
         cout<<"2. Deposit money\n";
@@ -136,7 +132,6 @@ int main(){
         switch(option){
             case 1:
                 acc.MakeAnAccount();
-                acc.addPersonalDetails();
                 break;
         
             case 2:
