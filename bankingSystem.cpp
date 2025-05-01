@@ -197,7 +197,7 @@ int main(){
                 cout<<"EXITING BANKING SYSTEM\n";
                 cout<<"Thank you!";
                 break;
-            case 8: 
+            default: 
             cout<<"invalid choice";
             }     
     }
