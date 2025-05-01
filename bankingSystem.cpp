@@ -1,4 +1,3 @@
-
 #include<iostream>
 #include<vector>
 #include<string>
@@ -70,7 +69,8 @@ class BankAccount{
                     newNode->next=head;
                     head=newNode;
                 }
-                cout<<"you have withdrawn"<<amount<<"rupees\n";
+                cout<<"you have withdrawn "<<amount<<"rupees\n";
+                cout<<"\n";
             }
             void transactionHistory(){
                 cout<<"Your transation history is : \n";
@@ -114,7 +114,10 @@ int main(){
 
     int option=0;
     
-    while(option !=7){
+    char choice;
+    
+    do{
+    
         cout<<"MENU"<<"\n"<<"Choose the operation you want to perform\n";
         cout<<"1. Create a new account\n";
         cout<<"2. Deposit money\n";
@@ -194,7 +197,12 @@ int main(){
                 break;
             default: 
             cout<<"invalid choice";
-            }     
-    }
+            } 
+            
+            cout << "Do you want to perform another operation? (y/n): ";
+        cin >> choice;
+    }while (choice=='y' || choice =='Y');
+   
+    
    return 0; 
 }
