@@ -30,12 +30,12 @@ class BankAccount{
             }
 
             void MakeAnAccount(){
-                cout<<"Enter Account Number"<<"\n";
+                cout<<"Enter Account Number "<<"\n";
                 cin>>accountNo;
-                cout<<"Enter Your Name"<<"\n";
+                cout<<"Enter Your Name "<<"\n";
                 cin.ignore();
                 getline(cin, name); //used for full name 
-                cout<<"Enter the amount of money you want to deposit initially"<<"\n";
+                cout<<"Enter the amount of money you want to deposit initially "<<"\n";
                 cin>>balance;
 
             }
@@ -52,7 +52,7 @@ class BankAccount{
                     head=newNode;
                 }
 
-                cout<<"you have deposited"<<amount<<"rupees\n";
+                cout<<"you have deposited "<<amount<<" rupees\n";
             }
             
             void withdrawMoney(float amount){
@@ -69,17 +69,17 @@ class BankAccount{
                     newNode->next=head;
                     head=newNode;
                 }
-                cout<<"you have withdrawn "<<amount<<"rupees\n";
+                cout<<"you have withdrawn "<<amount<<" rupees\n";
                 cout<<"\n";
             }
             void transactionHistory(){
-                cout<<"Your transation history is : \n";
+                cout<<"Your transaction history is : \n";
                 node* temp=head;
                 if(temp==NULL){
-                    cout<<"you have made no transations"<<"\n"; // list is empty
+                    cout<<"you have made no transitions "<<"\n"; // list is empty
                 }
                 while(temp!=NULL){
-                    cout<<temp->type<<temp->amount<<"rupees\n";
+                    cout<<temp->type<<temp->amount<<" rupees\n";
                     temp=temp->next;
                 }
             }
@@ -125,7 +125,7 @@ int main(){
         cout<<"4. Display account details\n";
         cout<<"5. Show transation history\n";
         cout<<"6. Delete account\n";
-        cout<<"7 . EXIT\n";
+        cout<<"7. EXIT\n";
         
         cin>>option;
 
