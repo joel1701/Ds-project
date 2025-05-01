@@ -15,7 +15,7 @@ class node{ //node class is used for storing transation history
                 next=NULL;
             }
 };
-
+    
 class BankAccount{
     private:
             int accountNo; //account number of user
