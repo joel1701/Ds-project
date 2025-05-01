@@ -203,6 +203,5 @@ int main(){
         cin >> choice;
     }while (choice=='y' || choice =='Y');
    
-    cout<<"hi";
    return 0; 
 }
