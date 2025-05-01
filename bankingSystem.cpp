@@ -203,7 +203,7 @@ int main(){
         cin >> choice;
     }while (choice=='y' || choice =='Y');
 
-    cout<<"ji"
+    cout<<Hi
 
    return 0; 
 }
