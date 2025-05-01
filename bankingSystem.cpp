@@ -79,7 +79,7 @@ class BankAccount{
                     cout<<"you have made no transitions "<<"\n"; // list is empty
                 }
                 while(temp!=NULL){
-                    cout<<temp->type<<temp->amount<<" rupees\n";
+                    cout<<temp->type<<" "<<temp->amount<<" rupees\n";
                     temp=temp->next;
                 }
             }
