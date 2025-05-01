@@ -116,7 +116,7 @@ class BankAccount{
 int main(){
     BankAccount acc;
 
-    int option;
+    int option=0;
     
     while(option !=8){
         cout<<"MENU"<<"\n"<<"Choose the operation you want to perform\n";
