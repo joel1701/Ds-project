@@ -15,7 +15,7 @@ class node{ //node class is used for storing transation history
                 next=NULL;
             }
 };
-    
+
 class BankAccount{
     private:
             int accountNo; //account number of user
@@ -202,6 +202,8 @@ int main(){
             cout << "Do you want to perform another operation? (y/n): ";
         cin >> choice;
     }while (choice=='y' || choice =='Y');
+
+    cout<<"ji"
 
    return 0; 
 }
